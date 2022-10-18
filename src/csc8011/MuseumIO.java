@@ -61,16 +61,21 @@ public class MuseumIO {
          return 0;
     }
 
-    private void readCSV () throws FileNotFoundException {
-        Scanner sc = new Scanner(new File("src/csc8011/exhibits.csv"));
-        sc.useDelimiter(",");
-        while (sc.hasNext())
-        {
-            System.out.print(sc.next());
+    private void readCSV () {
+        try {
+            File names = new File(Museum.class.getResource(
+                    "exhibits.csv").getFile());
+            Scanner myReader = new Scanner(names);
+            while (myReader.hasNext()){
+                String[] tmp = myReader.nextLine().split(",");
+                System.out.println(tmp[0]);
+                System.out.println(tmp[1]);
+                System.out.println(tmp[2]);
+            }
+        } catch (FileNotFoundException e){
+            e.printStackTrace();
         }
-        sc.close();
-        }
-
+    }
 
     public static void main(String[] args) throws FileNotFoundException {
         MuseumIO museumIO = new MuseumIO();
