@@ -50,7 +50,7 @@ public class MuseumIO {
         int n = s.nextInt();
         if
         (n <= 5 && n > 0 ){
-            return 0;
+            return n;
         }
         else
             return n;
