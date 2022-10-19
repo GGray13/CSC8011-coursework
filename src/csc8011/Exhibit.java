@@ -17,6 +17,10 @@ public class Exhibit {
                 this.yearAcquired = yearAcquired;
                 this.exhibitValue = exhibitValue;
         }
+
+        public Exhibit(String exhibitId, String exhibitDescription, String s, double exhibitValue) {
+        }
+
         //Getters
         public String getExhibitId()
         {
@@ -64,9 +68,9 @@ public class Exhibit {
 @Override //To properly format output of methods
 public  String toString()
                 {
-                return String.format("ExhibitID: " + exhibitId +
-                        "Description:" + exhibitDescription +
-                        "Year Acquired: " + yearAcquired +
+                return String.format("ExhibitID: " + exhibitId +"\n" +
+                        "Description:" + exhibitDescription + "\n" +
+                        "Year Acquired: " + yearAcquired + "\n" +
                         "Value: " + exhibitValue);
                 }
 }

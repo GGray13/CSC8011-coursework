@@ -11,13 +11,21 @@ public class Museum {
 
     //Constructor
     public Museum(String name) {
-        setName(name);
+        this.name = name;
     }
+    public Museum() {
+        name = "Vintage computer museum";
+    }
+
     public String getName() {
         return name;
     }
     public void setName(String name){
         this.name = name;
+    }
+
+    public boolean addExhibitName(Exhibit f){
+        return exhibits.add(f);
     }
     public ArrayList<Exhibit> getExhibits(){
         return exhibits;
