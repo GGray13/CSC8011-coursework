@@ -13,6 +13,7 @@ public class Museum {
     public Museum(String name) {
         this.name = name;
     }
+
     public Museum() {
         name = "Vintage computer museum";
     }
@@ -20,48 +21,50 @@ public class Museum {
     public String getName() {
         return name;
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
 
-    public boolean addExhibitName(Exhibit f){
+    public boolean addExhibitName(Exhibit f) {
         return exhibits.add(f);
     }
-    public ArrayList<Exhibit> getExhibits(){
+
+    public ArrayList<Exhibit> getExhibits() {
         return exhibits;
     }
 
-// Method to return the highest value exhibit
+    // Method to return the highest value exhibit
     public Exhibit highestValueExhibit() {
-        double highestValue = getExhibits().get(0).getExhibitValue();
-        for (int i = 1; i < getExhibits().size(); i++) {
-            if (highestValue < getExhibits().get(i).getExhibitValue()) {
-                highestValue = getExhibits().get(i).getExhibitValue();
+        Exhibit maxValue = exhibits.get(0);
+        for (Exhibit f : exhibits) {
+            if (f.getExhibitValue() > maxValue.getExhibitValue()) {
+                maxValue = f;
             }
         }
-        return getExhibits().get((int) highestValue);
+        return maxValue;
     }
 
     // Method to return the first exhibit acquired
     public Exhibit firstExhibitAcquired() {
-        int min = getExhibits().get(0).getYearAcquired();
-        int n = getExhibits().size();
-        for (int i = 1; i < n; i++) {
-            if (getExhibits().get(i).getYearAcquired() < min) {
-                min = getExhibits().get(i).getYearAcquired();
+        Exhibit minYear = exhibits.get(0);
+        for (Exhibit f : exhibits) {
+            if (f.getYearAcquired() < minYear.getYearAcquired()) {
+                minYear = f;
             }
         }
-        return getExhibits().get((int) min);
+        return minYear;
     }
+
 
     //Method to return average exhibit value
     public double averageValue() {
-        OptionalDouble average = exhibits
-                .stream()
-                .mapToInt(a -> a.getYearAcquired())
-                .average(); {
-    return average.isPresent() ? average.getAsDouble() : 0;
+        double total = 0;
+        for (Exhibit i : getExhibits()) {
+            total += i.getExhibitValue();
         }
+        return total / getExhibits().size();
     }
 }
+
 

@@ -68,10 +68,7 @@ public class Exhibit {
 @Override //To properly format output of methods
 public  String toString()
                 {
-                return String.format("ExhibitID: " + exhibitId +"\n" +
-                        "Description:" + exhibitDescription + "\n" +
-                        "Year Acquired: " + yearAcquired + "\n" +
-                        "Value: " + exhibitValue);
+                return String.format("ExhibitID: " + exhibitId + " Description: " + exhibitDescription + " Year Acquired: " + yearAcquired + " Value: " + exhibitValue);
                 }
 }
 
