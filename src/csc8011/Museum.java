@@ -1,7 +1,6 @@
 package csc8011;
 
 import java.util.ArrayList;
-import java.util.OptionalDouble;
 
 public class Museum {
 
@@ -63,7 +62,7 @@ public class Museum {
         for (Exhibit i : getExhibits()) {
             total += i.getExhibitValue();
         }
-        return total / getExhibits().size();
+        return total / getExhibits().size();  //total value of exhibits divided by number of exhibits to get average.
     }
 }
 

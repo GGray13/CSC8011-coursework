@@ -2,14 +2,14 @@ package csc8011;
 
 public class Exhibit {
 
-        // Set to private to take advantage of encapsulation.
+        // Setters to assign exhibit values.  Set to private to take advantage of encapsulation.
         private String exhibitId;
         private String exhibitDescription;
         private int yearAcquired;
         private double exhibitValue;
 
 
-        //Constructors
+        //Constructors to initialise the instance of the Exhibit class
         public Exhibit(String exhibitId, String exhibitDescription, int yearAcquired, double exhibitValue) {
 
                 this.exhibitId = exhibitId;
@@ -18,10 +18,7 @@ public class Exhibit {
                 this.exhibitValue = exhibitValue;
         }
 
-        public Exhibit(String exhibitId, String exhibitDescription, String s, double exhibitValue) {
-        }
-
-        //Getters
+        //Getters set to public access levels to take advantage of encapsulation
         public String getExhibitId()
         {
                 return exhibitId;
@@ -42,30 +39,8 @@ public class Exhibit {
                 return exhibitValue;
         }
 
-        //Setters
-
-        public void setExhibitId (String exhibitId)
-        {
-                this.exhibitId = exhibitId;
-        }
-
-        public void setExhibitDescription (String exhibitDescription)
-        {
-                this.exhibitDescription = exhibitDescription;
-        }
-
-        public void setYearAcquired (int yearAcquired)
-        {
-                this.yearAcquired = yearAcquired;
-        }
-
-        public void setExhibitValue (double exhibitValue)
-        {
-                this.exhibitValue = exhibitValue;
-        }
-
-
-@Override //To properly format output of methods
+// instance method to override the toString() method.  Provides a string representation of the exhibit details
+@Override
 public  String toString()
                 {
                 return String.format("ExhibitID: " + exhibitId + " Description: " + exhibitDescription + " Year Acquired: " + yearAcquired + " Value: " + exhibitValue);
